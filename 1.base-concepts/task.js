@@ -23,21 +23,6 @@ function solveEquation(a, b, c) {
 }
 
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
-
-  if (typeof(percent) === "string") {
-    percent = parseInt(percent, 10);
-  }
-    
-  if (percent != percent) {
-    return(`Параметр <Процентная ставка> содержит неправильное значение ${percent}`);
-  }
-
-  if (typeof(contribution) === "string") {
-    contribution = parseInt(contribution, 10);
-  }
-    
-  if (contribution != contribution) {
-    return(`Параметр <Первоначальный взнос> содержит неправильное значение ${contribution}`);
-  }
+ 
   
 }
