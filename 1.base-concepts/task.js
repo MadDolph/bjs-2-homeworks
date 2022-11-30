@@ -23,6 +23,45 @@ function solveEquation(a, b, c) {
 }
 
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
- 
+
+  let P;
+  let loanPayment;
+
+  //проверяем входящие данные на соответствие требованиям
+  if (typeof(percent) === "string") {
+    percent = parseInt(percent, 10);
+  }
+    
+  if (percent != percent) {
+    return(false);
+  }
+
+  if (typeof(contribution) === "string") {
+    contribution = parseInt(contribution, 10);
+  }
+    
+  if (contribution != contribution) {
+    return(false);
+  }
+
+  if (typeof(amount) === "string") {
+    amount = parseInt(amount, 10);
+  }
+    
+  if (amount != amount) {
+    return(false);
+  }
+
+  if (typeof(countMonths) === "string") {
+    countMonths = parseInt(countMonths, 10);
+  }
+    
+  if (countMonths != countMonths) {
+   return(false);
+  }
+  
+  //начинаем обработку входящих данных
+  
+  //Так и не разобрался в постановке задачи, где-то косяк.
   
 }
