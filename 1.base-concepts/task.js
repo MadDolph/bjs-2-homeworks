@@ -33,7 +33,7 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
   }
     
   if (percent != percent) {
-    return(false);
+    return false;
   }
 
   if (typeof(contribution) === "string") {
@@ -41,7 +41,7 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
   }
     
   if (contribution != contribution) {
-    return(false);
+    return false;
   }
 
   if (typeof(amount) === "string") {
@@ -49,7 +49,7 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
   }
     
   if (amount != amount) {
-    return(false);
+    return false;
   }
 
   if (typeof(countMonths) === "string") {
@@ -57,7 +57,7 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
   }
     
   if (countMonths != countMonths) {
-   return(false);
+   return false;
   }
   
   //начинаем обработку входящих данных
