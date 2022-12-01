@@ -26,7 +26,10 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
 
   let P;
   let loanPayment;
-  let loanBody;
+
+  //вот этот расчёт это дичь, т.к. это не является телом кредитаю...
+  const loanBody = amount - contribution;
+  
   let totalCredit;
 
   //проверяем входящие данные на соответствие требованиям
@@ -61,10 +64,6 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
 
   P = percent / 12 / 100;
   
-  //вот этот расчёт это дичь, т.к. это не является телом кредитаю...
-
-  loanBody = amount - contribution;
- 
   //Расчёт суммы ежемесячного платежа
 
   loanPayment = loanBody * (P + (P / (((1 + P) ** countMonths) - 1)));
