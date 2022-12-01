@@ -26,42 +26,57 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
 
   let P;
   let loanPayment;
+  let loanBody;
+  let totalCredit;
 
   //проверяем входящие данные на соответствие требованиям
-  if (typeof(percent) === "string") {
-    percent = parseInt(percent, 10);
-  }
-    
-  if (percent != percent) {
-    return false;
-  }
-
-  if (typeof(contribution) === "string") {
-    contribution = parseInt(contribution, 10);
-  }
-    
-  if (contribution != contribution) {
-    return false;
-  }
-
-  if (typeof(amount) === "string") {
-    amount = parseInt(amount, 10);
-  }
-    
-  if (amount != amount) {
-    return false;
-  }
-
-  if (typeof(countMonths) === "string") {
-    countMonths = parseInt(countMonths, 10);
-  }
-    
-  if (countMonths != countMonths) {
-   return false;
-  }
   
+  if(parseInt(percent, 10)!=parseInt(percent, 10)) {
+    
+    return false;
+    
+  } else percent = parseInt(percent, 10);
+    
+  if (parseInt(contribution, 10)!=parseInt(contribution, 10)) {
+    
+    return false;
+
+  } else contribution = parseInt(contribution, 10);
+
+  if (parseInt(amount, 10)!=parseInt(amount, 10)) {
+    
+    return false;
+
+  } else amount = parseInt(amount, 10);
+
+  if (parseInt(countMonths, 10)!=parseInt(countMonths, 10)) {
+    
+    return false;
+
+  } else countMonths = parseInt(countMonths, 10);
+
   //начинаем обработку входящих данных
   
-  //Так и не разобрался в постановке задачи, но описание разнится с входными данными, например.
+  //рассчитываем процентную ставку месячную
+
+  P = percent / 12 / 100;
+  
+  //вот этот расчёт это дичь, т.к. это не является телом кредитаю...
+
+  loanBody = amount - contribution;
+ 
+  //Расчёт суммы ежемесячного платежа
+
+  loanPayment = loanBody * (P + (P / (((1 + P) ** countMonths) - 1)));
+  
+  //общая сумма кредита с процентами за весь период
+
+  totalCredit = loanPayment * countMonths;
+
+  //округление до нужной точности
+
+  totalCredit = + totalCredit.toFixed(2);
+
+  return totalCredit;
   
 }
