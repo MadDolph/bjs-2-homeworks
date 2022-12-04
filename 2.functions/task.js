@@ -104,16 +104,24 @@ function averageEvenElementsWorker(...arr) {
     return accum + currentValue;
   }, 0)
 
-  if(evenArr.length != 0) {
-    
-    return evenSum / evenArr.length;
+   
+  return evenSum / evenArr.length;
 
-  } else return 0;
+ 
 
 }
 
 function makeWork (arrOfArr, func) {
+ 
+  maxWorkerResult = -Infinity;
+  Result = 0;
 
+  for(i = 0; i < arrOfArr.length; i++) {
+     
+    if(func(...arrOfArr[i]) > maxWorkerResult) maxWorkerResult = func(...arrOfArr[i]);
+     
+  }
 
+  return maxWorkerResult;
 
 }
