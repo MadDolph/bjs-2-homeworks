@@ -116,9 +116,9 @@ function makeWork (arrOfArr, func) {
   maxWorkerResult = -Infinity;
   Result = 0;
 
-  for(i = 0; i < arrOfArr.length; i++) {
+  for(j = 0; j < arrOfArr.length; j++) {
      
-    if(func(...arrOfArr[i]) > maxWorkerResult) maxWorkerResult = func(...arrOfArr[i]);
+    if(func(...arrOfArr[j]) > maxWorkerResult) maxWorkerResult = func(...arrOfArr[j]);
      
   }
 
