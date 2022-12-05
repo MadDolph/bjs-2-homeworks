@@ -8,8 +8,7 @@ function getUsersNamesInAgeRange(users, gender) {
   const result = users.filter(item => item.gender == gender).reduce(function(accum, item, index, arr) {
     if(arr.length !== (index + 1)) {
         accum += item.age;
-      } else {
-        console.log(accum);
+      } else {     
         accum += item.age;
         accum = accum / arr.length;
       }
