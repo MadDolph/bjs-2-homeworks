@@ -76,7 +76,7 @@ function averageEvenElementsWorker(...arr) {
   let evenArr = [];
   let evenSum = 0;
  
-  for (i = 0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
     if (arr[i] % 2 == 0) {
       evenArr.push(arr[i]);
     } 
