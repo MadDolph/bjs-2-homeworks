@@ -38,12 +38,8 @@ function summElementsWorker(...arr) {
     
     let max = Math.max(...arr);
     let min = Math.min(...arr);
-    
-    if(min !== min || max !== max) {
-      return false;
-    }
-    
     let div = max - min;
+   
     if (!Number.isFinite(div)) {
       div = 0;
     }
