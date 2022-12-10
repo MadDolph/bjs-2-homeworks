@@ -10,16 +10,24 @@ Student.prototype.setSubject = function (subjectName) {
 }
 
 Student.prototype.addMarks = function (...marks) {
-  for(let mark of marks) {
-    this.marks.push(mark);
+  if(this.marks) {
+    for(let mark of marks) {
+      this.marks.push(mark);
+    }
   }
 }
 
 Student.prototype.getAverage = function () {
-   
-  
+   if(this.marks && this.marks.length != 0) {
+     let amount = this.marks.reduce((amount, mark) => amount + mark);
+     return amount / this.marks.length;
+   } else {
+     return 0;
+   }
 }
 
 Student.prototype.exclude = function (reason) {
-  
+  delete this.subject;
+  delete this.marks;
+  this.excluded= reason;
 }
