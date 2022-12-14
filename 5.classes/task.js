@@ -105,12 +105,15 @@ class Student {
 
     addMark(mark, subject) {
         if(mark < 6 && mark > 1) {
-            this.marks[subject] = mark;
-
+            if([subject] in this.marks) {
+                this.marks[subject].push(mark);    
+            } else {
+                this.marks[subject] = [];
+                this.addMark(mark, subject);
+              }
         } else {
             return;
         }
-
     }
     
 }
