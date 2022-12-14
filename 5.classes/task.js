@@ -108,12 +108,12 @@ class Student {
             if([subject] in this.marks) {
                 this.marks[subject].push(mark);    
             } else {
-                this.marks[subject] = [];
-                this.addMark(mark, subject);
+                 this.marks[subject] = [];
+                 this.addMark(mark, subject);
               }
         } else {
             return;
-        }
+          }
     }
     
 }
