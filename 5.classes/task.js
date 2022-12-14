@@ -77,8 +77,40 @@ class Library {
     }
 
     findBookBy(type, value) {
-        
+       let result = this.books.find(el => el[type] == value);
+       if(result) {
+            return result;  
+       } else {
+            return null;
+       }
     }
 
+    giveBookByName(bookname) {
+        let result = this.findBookBy("name", bookname);
+        if(result) {
+            let index = this.books.indexOf(result);
+            this.books.splice(index);
+        }    
+        return result;
+    }
+}
 
+class Student {
+    constructor(name, gender, age) {
+        this.name = name;
+        this.gender = gender;
+        this.age = age;
+        this.marks = {};  
+    }
+
+    addMark(mark, subject) {
+        if(mark < 6 && mark > 1) {
+            this.marks[subject] = mark;
+
+        } else {
+            return;
+        }
+
+    }
+    
 }
