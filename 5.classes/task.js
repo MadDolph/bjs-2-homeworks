@@ -103,7 +103,7 @@ class Student {
         this.marks = {};  
     }
 
-    addMark(mark, subject) {
+    addMark(mark, subject) { //наворочено, можно проще (про весь код данного метода)
         if(mark < 6 && mark > 1) {
             if([subject] in this.marks) {
                 this.marks[subject].push(mark);    
