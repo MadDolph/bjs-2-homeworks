@@ -115,5 +115,28 @@ class Student {
             return;
           }
     }
-    
+
+    getAverageBySubject(subject) {
+        if([subject] in this.marks) {
+            let Average = this.marks[subject].reduce((total, mark) => total + mark, 0);
+            return Average / this.marks[subject].length ;
+        } else {
+            return 0;
+          }
+    }
+
+    getAverage() {
+        let totalAverage = 0;
+        let Average;
+        let subjects = Object.keys(this.marks);
+        if(subjects.length != 0) {
+            for(let el of subjects) {
+                Average = this.getAverageBySubject(el);
+                totalAverage += Average;
+            }
+            return totalAverage / subjects.length;
+        } else {
+            return 0;
+        }
+    }
 }
