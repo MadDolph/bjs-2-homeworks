@@ -89,7 +89,7 @@ class Library {
         let result = this.findBookBy("name", bookname);
         if(result) {
             let index = this.books.indexOf(result);
-            this.books.splice(index);
+            this.books.splice(index, 1);
         }    
         return result;
     }
