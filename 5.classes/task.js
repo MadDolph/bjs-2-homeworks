@@ -89,7 +89,7 @@ class Library {
         let result = this.findBookBy("name", bookname);
         if(result) {
             let index = this.books.indexOf(result);
-            this.books.splice(index);
+            this.books.splice(index, 1);
         }    
         return result;
     }
@@ -103,7 +103,7 @@ class Student {
         this.marks = {};  
     }
 
-    addMark(mark, subject) {
+    addMark(mark, subject) { //наворочено, можно проще (про весь код данного метода)
         if(mark < 6 && mark > 1) {
             if([subject] in this.marks) {
                 this.marks[subject].push(mark);    
@@ -115,5 +115,28 @@ class Student {
             return;
           }
     }
-    
+
+    getAverageBySubject(subject) {
+        if([subject] in this.marks) {
+            let Average = this.marks[subject].reduce((total, mark) => total + mark, 0);
+            return Average / this.marks[subject].length ;
+        } else {
+            return 0;
+          }
+    }
+
+    getAverage() {
+        let totalAverage = 0;
+        let Average;
+        let subjects = Object.keys(this.marks);
+        if(subjects.length != 0) {
+            for(let el of subjects) {
+                Average = this.getAverageBySubject(el);
+                totalAverage += Average;
+            }
+            return totalAverage / subjects.length;
+        } else {
+            return 0;
+        }
+    }
 }
