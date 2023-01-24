@@ -34,29 +34,16 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
 
   //проверяем входящие данные на соответствие требованиям
   
-  if(parseInt(percent, 10)!=parseInt(percent, 10)) {
+  if(isNaN(percent) || isNaN(contribution) || isNaN(amount) || isNaN(countMonths)) {
     
     return false;
     
-  } else percent = parseInt(percent, 10);
-    
-  if (parseInt(contribution, 10)!=parseInt(contribution, 10)) {
-    
-    return false;
-
-  } else contribution = parseInt(contribution, 10);
-
-  if (parseInt(amount, 10)!=parseInt(amount, 10)) {
-    
-    return false;
-
-  } else amount = parseInt(amount, 10);
-
-  if (parseInt(countMonths, 10)!=parseInt(countMonths, 10)) {
-    
-    return false;
-
-  } else countMonths = parseInt(countMonths, 10);
+  } else { 
+           percent = parseInt(percent, 10);
+           contribution = parseInt(contribution, 10);
+           amount = parseInt(amount, 10);
+           countMonths = parseInt(countMonths, 10);
+          }
 
   //начинаем обработку входящих данных
   
